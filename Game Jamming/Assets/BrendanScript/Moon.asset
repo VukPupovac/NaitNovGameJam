@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Moon
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSO
   threatType: 4
-  prefab: {fileID: 5124638442236736456, guid: f6d9a8d10b5d45a43a929d4ef1878d8b, type: 3}
+  prefab: {fileID: 4302497771922056377, guid: ad59c9799f58d314cbe63595b667fb90, type: 3}
   cooldown: 20
   damage: 10
   speed: 0.5
