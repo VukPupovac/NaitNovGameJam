@@ -69,7 +69,7 @@ public class ThreatSpawner : MonoBehaviour
 
         ThreatSO selectedThreat = availableThreats[Random.Range(0, availableThreats.Count)];
 
-        Vector2 spawnPosition = GetRandomPointInSpawnArea();
+        Vector2 spawnPosition = GetRandomPointInSpawnArea(selectedThreat);
 
         Instantiate(
             selectedThreat.prefab,
@@ -89,11 +89,25 @@ public class ThreatSpawner : MonoBehaviour
         return Time.time >= nextSpawnTime;
     }
 
-    private Vector2 GetRandomPointInSpawnArea()
+    private Vector2 GetRandomPointInSpawnArea(ThreatSO threat)
     {
         if (spawnArea == null)
         {
             return transform.position;
+        }
+
+        if (threat.threatType == ThreatType.Moon)
+        {
+            Camera cam = Camera.main;
+
+            Vector3 viewportPos = new Vector3(
+                0f,                    // left edge
+                Random.value,          // random height
+                Mathf.Abs(cam.transform.position.z));
+
+            Vector3 worldPos = cam.ViewportToWorldPoint(viewportPos);
+
+            return new Vector2(worldPos.x, worldPos.y);
         }
 
         Bounds bounds = spawnArea.bounds;
@@ -112,4 +126,5 @@ public class ThreatSpawner : MonoBehaviour
 
         return bounds.center;
     }
+
 }
