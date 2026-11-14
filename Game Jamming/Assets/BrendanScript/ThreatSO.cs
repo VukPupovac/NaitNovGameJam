@@ -15,4 +15,6 @@ public class ThreatSO : ScriptableObject
     public ThreatType threatType;
     public GameObject prefab;
     public float cooldown;
+    public int damage;
+    public float speed = 1;
 }
