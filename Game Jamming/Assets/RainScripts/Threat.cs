@@ -20,7 +20,7 @@ public class Threat : MonoBehaviour
         gameObject.transform.localScale = new Vector3(closeness/2, closeness/2, 1);
         if (closeness >= 10)
         {
-            Manager.playerHealth -= ThreatData.damage;
+            Manager.currentPlayerHealth -= ThreatData.damage;
             Destroy(gameObject);
         }
         closeness += Time.deltaTime * (ThreatData.speed);

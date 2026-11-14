@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set;}
 
-    public int playerHealth = 100;
+    public int playerMaxHealth = 100;
     public int earthHealth = 100;
     public int cowCount = 0;
+    public int currentPlayerHealth;
 
     //public List<Threats> incomingThreats = new List<Threats>();
     
@@ -22,13 +23,15 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        currentPlayerHealth = playerMaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(playerHealth <= 0)
+        if(currentPlayerHealth <= 0)
         {
             Lose();
         }

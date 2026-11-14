@@ -5,7 +5,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
     [Header("Universal")]
     private float currentActTimer;
     [SerializeField] private float cooldownTimer = 2f;// so the player can't spam click options
-    // [SerializeField] private GameManager gameManager; // reference to game manager if need be for liek repairing the ship
+    private GameManager gameManager = GameManager.Instance; // reference to game manager if need be for liek repairing the ship
     [SerializeField] private float dodgeTimer = 1f;
     private float currentDodgeTimer;
     public bool isDodging { get => currentDodgeTimer > 0f;} // for outside refernces
@@ -96,14 +96,14 @@ public class PlayerWeaponsSystem : MonoBehaviour
             return; // on cooldown since last action, cannot act
         }
 
-        /* if (gameManager.PlayerHealth = gameManager.MaxPlayerHealth)
+         if (gameManager.currentPlayerHealth == gameManager.playerMaxHealth)
             {
                 currentActTimer = cooldownTimer;
                 return; // Player already at max Health
             }
-         gameManager.PlayerHealth += repairAmount;
+         gameManager.currentPlayerHealth += repairAmount;
          currentActTimer = cooldownTimer;
-        */
+        
     }
 
 }
