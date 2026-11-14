@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab558c01c85d569468ce419783bebf57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  fireEvent: {fileID: 11400000, guid: 928677fc58f6ed54aaaaa3f06086d0c8, type: 2}
+  hitEvent: {fileID: 11400000, guid: ad34523452e7c574eaada552fba20e78, type: 2}
   targetLayer:
     serializedVersion: 2
     m_Bits: 2560

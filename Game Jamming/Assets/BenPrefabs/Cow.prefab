@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5471f4b0391457c4d8b010e515bdee6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CowProjectile
+  spawnEvent: {fileID: 11400000, guid: c242d7d90c3d85543b83dd3e75e0ce48, type: 2}
+  scoreEvent: {fileID: 11400000, guid: 8ba8176d7affaac43b1416801b936bd0, type: 2}
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
