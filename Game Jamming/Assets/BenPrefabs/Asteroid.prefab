@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab558c01c85d569468ce419783bebf57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsteroidProjectile
+  fireEvent: {fileID: 11400000, guid: 8bb0c3b2589dfa1488f80342630dd9cb, type: 2}
+  hitEvent: {fileID: 11400000, guid: d9f423d4f954718449ad6c62798d5da3, type: 2}
   targetLayer:
     serializedVersion: 2
     m_Bits: 3072

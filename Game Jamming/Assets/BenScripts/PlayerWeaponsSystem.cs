@@ -95,6 +95,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             return; // on cooldown since last action, cannot act
         }
+
         /* if (gameManager.PlayerHealth = gameManager.MaxPlayerHealth)
             {
                 currentActTimer = cooldownTimer;

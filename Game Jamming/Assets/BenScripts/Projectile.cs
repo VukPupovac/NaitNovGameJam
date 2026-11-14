@@ -5,6 +5,9 @@ public class Projectile : MonoBehaviour
     private GameObject target;
     private GameObject backupTarget;
 
+    [SerializeField] private GameEvent fireEvent;
+    [SerializeField] private GameEvent hitEvent;
+
     [SerializeField] private LayerMask targetLayer;
     [SerializeField] private LayerMask earthLayerMask;
 
@@ -14,6 +17,7 @@ public class Projectile : MonoBehaviour
     private Vector3 minScale;
     void Awake()
     {
+        fireEvent.Raise();
         FindTarget();
         minScale = transform.localScale * minScaleFactor;
     }
@@ -32,6 +36,7 @@ public class Projectile : MonoBehaviour
 
             if (transform.localScale.x <= minScale.x  && transform.localScale.y <= minScale.y)
             {
+                hitEvent.Raise();
                 // target.DamageTarget();
                 Destroy(gameObject);
             }
