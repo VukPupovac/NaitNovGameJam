@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int cowCount = 0;
     public int currentPlayerHealth;
 
-    //public List<Threats> incomingThreats = new List<Threats>();
+    public List<Threat> incomingThreats = new List<Threat>();
     
     private void Awake()
     {

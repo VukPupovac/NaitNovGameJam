@@ -8,10 +8,28 @@ public class Threat : MonoBehaviour
     private GameManager Manager;
     private float closeness = 0; 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Manager = GameManager.Instance;
+        if(GameManager.Instance != null)
+        {
+            Manager = GameManager.Instance;
+        }
+    }
+
+    void OnEnable()
+    {
+        if (Manager != null)
+        {
+            Manager.incomingThreats.Add(this);
+        }        
+    }
+
+    void OnDisable()
+    {
+        if (Manager != null)
+        {
+            Manager.incomingThreats.Remove(this);
+        }
     }
 
     // Update is called once per frame
@@ -23,7 +41,7 @@ public class Threat : MonoBehaviour
             Manager.currentPlayerHealth -= ThreatData.damage;
             Destroy(gameObject);
         }
-        closeness += Time.deltaTime * (ThreatData.speed);
+        closeness += Time.deltaTime * ThreatData.speed;
     }
 
     public ThreatType GetThreatType()
