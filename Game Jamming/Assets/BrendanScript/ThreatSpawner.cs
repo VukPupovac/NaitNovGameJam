@@ -1,19 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ThreatSpawner : MonoBehaviour
 {
-    [Header("Threat Prefabs")]
-    [SerializeField] private GameObject[] threatPrefabs;
+    [Header("Threats to Spawn")]
+    [SerializeField] private ThreatSO[] threats;
 
     [Header("Spawn Settings")]
     [SerializeField] private float minSpawnInterval = 1f;
     [SerializeField] private float maxSpawnInterval = 5f;
+    [SerializeField] private PolygonCollider2D spawnArea;
 
-    [Header("Spawn Area")]
-    [SerializeField] private PolygonCollider2D spawnPolygon;
+    private float spawnInterval;
 
-    private float spawninterval;
+    private Dictionary<ThreatType, float> nextSpawnTimes = new();
 
     private Coroutine spawnRoutine;
 
@@ -43,43 +44,72 @@ public class ThreatSpawner : MonoBehaviour
     {
         while (true)
         {
-            SpawnThreat();
-            spawninterval = Random.Range(minSpawnInterval, maxSpawnInterval);
-            // Debug.Log($"Waiting {spawninterval} seconds");
-            yield return new WaitForSeconds(spawninterval);
+            SpawnRandomAvailableThreat();
+            spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
-    private void SpawnThreat()
+    private void SpawnRandomAvailableThreat()
     {
-        if (threatPrefabs.Length == 0)
+        List<ThreatSO> availableThreats = new();
+
+        foreach (ThreatSO threat in threats)
         {
-            Debug.Log("No Prefabs");
+            if (CanSpawn(threat.threatType))
+            {
+                availableThreats.Add(threat);
+            }
+        }
+
+        if (availableThreats.Count == 0)
+        {
             return;
         }
 
-        GameObject selectedThreat = threatPrefabs[Random.Range(0, threatPrefabs.Length)];
-        Vector3 spawnPosition = GetRandomPointInSpawnArea();
+        ThreatSO selectedThreat = availableThreats[Random.Range(0, availableThreats.Count)];
 
-        Instantiate(selectedThreat, spawnPosition, Quaternion.identity);
+        Vector2 spawnPosition = GetRandomPointInSpawnArea();
+
+        Instantiate(
+            selectedThreat.prefab,
+            spawnPosition,
+            Quaternion.identity);
+
+        nextSpawnTimes[selectedThreat.threatType] = Time.time + selectedThreat.cooldown;
+    }
+
+    private bool CanSpawn(ThreatType threatType)
+    {
+        if (!nextSpawnTimes.TryGetValue(threatType, out float nextSpawnTime))
+        {
+            return true;
+        }
+
+        return Time.time >= nextSpawnTime;
     }
 
     private Vector2 GetRandomPointInSpawnArea()
     {
-        Bounds bounds = spawnPolygon.bounds;
+        if (spawnArea == null)
+        {
+            return transform.position;
+        }
+
+        Bounds bounds = spawnArea.bounds;
 
         for (int i = 0; i < 100; i++)
         {
-            Vector2 point = new Vector2(
+            Vector2 point = new(
                 Random.Range(bounds.min.x, bounds.max.x),
                 Random.Range(bounds.min.y, bounds.max.y));
 
-            if (spawnPolygon.OverlapPoint(point))
+            if (spawnArea.OverlapPoint(point))
             {
                 return point;
             }
         }
 
-        return spawnPolygon.bounds.center;
+        return bounds.center;
     }
 }

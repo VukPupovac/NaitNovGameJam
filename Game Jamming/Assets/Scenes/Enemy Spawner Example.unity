@@ -373,13 +373,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31581ba826a6a9347a3ce13a37d0f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSpawner
-  threatPrefabs:
-  - {fileID: 7547311481300471111, guid: 8ba9113b78e30d646b92c5e0ba93a8a7, type: 3}
-  - {fileID: 1835273224669120405, guid: e6485a2ad927e844c91685bc139f4244, type: 3}
-  - {fileID: 5124638442236736456, guid: f6d9a8d10b5d45a43a929d4ef1878d8b, type: 3}
+  threats:
+  - {fileID: 11400000, guid: 5817bf58887d46b40b5e924076761e4c, type: 2}
+  - {fileID: 11400000, guid: 20833cf2b777bd542beea2caa513f76e, type: 2}
+  - {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
   minSpawnInterval: 1
   maxSpawnInterval: 5
-  spawnPolygon: {fileID: 1600575108}
+  spawnArea: {fileID: 1600575108}
 --- !u!4 &1734362930
 Transform:
   m_ObjectHideFlags: 0
