@@ -7,10 +7,13 @@ public class ThreatSpawner : MonoBehaviour
     [SerializeField] private GameObject[] threatPrefabs;
 
     [Header("Spawn Settings")]
-    [SerializeField] private float spawninterval = 2f;
+    [SerializeField] private float minSpawnInterval = 1f;
+    [SerializeField] private float maxSpawnInterval = 5f;
 
     [Header("Spawn Area")]
     [SerializeField] private PolygonCollider2D spawnPolygon;
+
+    private float spawninterval;
 
     private Coroutine spawnRoutine;
 
@@ -41,6 +44,8 @@ public class ThreatSpawner : MonoBehaviour
         while (true)
         {
             SpawnThreat();
+            spawninterval = Random.Range(minSpawnInterval, maxSpawnInterval);
+            // Debug.Log($"Waiting {spawninterval} seconds");
             yield return new WaitForSeconds(spawninterval);
         }
     }
