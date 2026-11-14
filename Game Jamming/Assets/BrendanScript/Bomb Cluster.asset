@@ -15,3 +15,5 @@ MonoBehaviour:
   threatType: 1
   prefab: {fileID: 1835273224669120405, guid: e6485a2ad927e844c91685bc139f4244, type: 3}
   cooldown: 5
+  damage: 5
+  speed: 3
