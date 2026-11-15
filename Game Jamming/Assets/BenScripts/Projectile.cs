@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private LayerMask targetLayer;
     private List<int> targetLayerIndices = new();
     private GameObject targetPlanet;
+    [SerializeField] private GameObject explosion;
 
     [SerializeField] private float scaleSpeed = 0.01f; //scale down speed per frame
     [SerializeField] private float minScaleFactor = 0.1f;
@@ -61,6 +62,7 @@ public class Projectile : MonoBehaviour
             { // destroy associated target that this projectile can affect
              //already determined by the layer mask used in find target
                 gameManager.incomingThreats.Remove(targetThreat);
+                Instantiate(explosion, transform.position, Quaternion.identity);
                 Destroy(target);
             }
             Destroy(gameObject);
