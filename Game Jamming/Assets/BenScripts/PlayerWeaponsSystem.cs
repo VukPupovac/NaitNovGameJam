@@ -1,4 +1,5 @@
-using UnityEngine;
+ using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerWeaponsSystem : MonoBehaviour
 {
@@ -21,6 +22,21 @@ public class PlayerWeaponsSystem : MonoBehaviour
     [SerializeField] private GameObject AsteroidPrefab;
     [SerializeField] private GameObject CowPrefab;
 
+    [SerializeField] private Image laserImg;
+    [SerializeField] private Image repairImg;
+    [SerializeField] private Image dodgeImg;
+    [SerializeField] private Image funImg;
+    [SerializeField] private Image cowImg;
+    [SerializeField] private Image asteroidImg;
+    [SerializeField] private Image UFOImg;
+
+    [SerializeField] private Image newLaser;
+    [SerializeField] private Image newRepair;
+    [SerializeField] private Image newDodge;
+    [SerializeField] private Image newFun;
+    [SerializeField] private Image newCow;
+    [SerializeField] private Image newAsteroid;
+    [SerializeField] private Image newUFO;
 
     private void Awake()
     {

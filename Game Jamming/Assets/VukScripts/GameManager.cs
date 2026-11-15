@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +12,18 @@ public class GameManager : MonoBehaviour
     public int cowCount = 0;
     public int currentPlayerHealth;
 
-    [SerializeField] private UIDocument uIDocument;
+    private Image shipHud;
+    private Image earthBack;
+
+
+    [SerializeField] private Image healthyHud;
+    [SerializeField] private Image medHud;
+    [SerializeField] private Image lowHud;
+
+    [SerializeField] private Image healthyEarth;
+    [SerializeField] private Image medEarth;
+    [SerializeField] private Image lowEarth;
+
 
     public List<Threat> incomingThreats = new List<Threat>();
     
@@ -26,8 +37,6 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        
 
         currentPlayerHealth = playerMaxHealth;
     }
@@ -46,9 +55,31 @@ public class GameManager : MonoBehaviour
             Win();
         }
 
-        if(currentPlayerHealth < 60)
+        if(currentPlayerHealth >= 60)
         {
-            
+            shipHud = healthyHud;
+        }
+        else if (currentPlayerHealth >= 30)
+        {
+            shipHud = medHud;
+        }
+        else
+        {
+            shipHud = lowHud;
+        }
+
+
+        if (earthHealth >= 60)
+        {
+            earthBack = healthyEarth;
+        }
+        else if (earthHealth >= 30)
+        {
+            earthBack = medEarth;
+        }
+        else
+        {
+            earthBack = lowEarth;
         }
     }
 
