@@ -17,13 +17,13 @@ public class Threat : MonoBehaviour
         {
             Manager = GameManager.Instance;
         }
-        if(ThreatData.threatType != ThreatType.Moon)
+        if(ThreatData.threatType != ThreatType.Moon && ThreatData.threatType != ThreatType.Satellite)
         {
             randomDrift = new Vector3(UnityEngine.Random.Range(-3f,3f), UnityEngine.Random.Range(-3f,3f), 0); // Generate Random Drift
         }
         else
         {
-            randomDrift = new Vector3(UnityEngine.Random.Range(4f,7f), UnityEngine.Random.Range(-1f,1f), 0); // Special Random Drift for The Moon. Always moves significantly to the right.
+            randomDrift = new Vector3(UnityEngine.Random.Range(7f,10f), UnityEngine.Random.Range(-1f,1f), 0); // Special Random Drift for The Moon and Sattelites. Always moves significantly to the right.
         }
     }
 
@@ -59,7 +59,7 @@ public class Threat : MonoBehaviour
 
         if(ThreatData.threatType == ThreatType.Rocket) // Make the rocket spin!
         {
-            gameObject.transform.eulerAngles += new Vector3(0,0,40)*Time.deltaTime;
+            gameObject.transform.eulerAngles += new Vector3(0,0,60)*Time.deltaTime;
         }
     }
 
