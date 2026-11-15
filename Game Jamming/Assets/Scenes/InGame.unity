@@ -1076,9 +1076,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20833cf2b777bd542beea2caa513f76e, type: 2}
   - {fileID: 11400000, guid: feb7c0b504a43de4e8d3a3327aef71f4, type: 2}
   - {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
+  - {fileID: 11400000, guid: fcb2add7f05191445ba4a7da5e233b46, type: 2}
   minSpawnInterval: 2
   maxSpawnInterval: 5
   spawnArea: {fileID: 449328341}
+  maxsatelliteSpawnDistance: 1
+  minsatelliteSpawnDistance: 0.3
 --- !u!4 &1246651630
 Transform:
   m_ObjectHideFlags: 0
