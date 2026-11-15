@@ -9,7 +9,7 @@ public class NPCPopup : MonoBehaviour
     [SerializeField] private Transform popupParent;
 
     [Header("Dialogue")]
-    [SerializeField] private string[] messages;
+    [SerializeField] private PopupDialogueSO[] dialogues;
 
     [Header("Timing")]
     [SerializeField] private float minTime = 5f;
@@ -20,7 +20,7 @@ public class NPCPopup : MonoBehaviour
     [Header("Spawn Area")]
     [SerializeField] private PolygonCollider2D spawnArea;
 
-    private void Start() // replace with game manager
+    private void Start()
     {
         StartNPCPopup();
     }
@@ -42,12 +42,12 @@ public class NPCPopup : MonoBehaviour
 
     private IEnumerator SpawnPopup()
     {
-        if (messages.Length == 0)
+        if (dialogues == null || dialogues.Length == 0)
         {
             yield break;
         }
 
-        string message = messages[Random.Range(0, messages.Length)];
+        PopupDialogueSO dialogue = dialogues[Random.Range(0, dialogues.Length)];
 
         Vector2 spawnPosition = GetRandomPointInSpawnArea();
 
@@ -57,8 +57,14 @@ public class NPCPopup : MonoBehaviour
             Quaternion.identity,
             popupParent);
 
-        TextMeshProUGUI popupText =
-            popup.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI popupText = popup.GetComponentInChildren<TextMeshProUGUI>();
+
+        DestroyPopup destroyPopup = popup.GetComponent<DestroyPopup>();
+
+        if (destroyPopup != null)
+        {
+            destroyPopup.SetResponse(dialogue.response);
+        }
 
         if (popupText == null)
         {
@@ -66,11 +72,12 @@ public class NPCPopup : MonoBehaviour
             yield break;
         }
 
-        yield return StartCoroutine(TypeText(popupText, message));
+        yield return StartCoroutine(TypeText(popupText, dialogue.message));
 
         float timer = 0f;
 
-        while (timer < popupDuration && popup != null)
+        while (timer < popupDuration &&
+               popup != null)
         {
             timer += Time.deltaTime;
             yield return null;
@@ -80,44 +87,42 @@ public class NPCPopup : MonoBehaviour
         {
             Destroy(popup);
         }
-
-
-}
-
-private IEnumerator TypeText(TextMeshProUGUI popupText, string message)
-{
-    popupText.text = "";
-    // Play audio here if we want a single continuous audio file
-
-    foreach (char letter in message)
-    {
-        popupText.text += letter;
-        // Play audio here if audio is per letter
-        yield return new WaitForSeconds(characterDelay);
-    }
-}
-
-private Vector2 GetRandomPointInSpawnArea()
-{
-    if (spawnArea == null)
-    {
-        return transform.position;
     }
 
-    Bounds bounds = spawnArea.bounds;
-
-    for (int i = 0; i < 100; i++)
+    private IEnumerator TypeText(TextMeshProUGUI popupText, string message)
     {
-        Vector2 point = new Vector2(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y));
+        popupText.text = "";
 
-        if (spawnArea.OverlapPoint(point))
+        foreach (char letter in message)
         {
-            return point;
+            popupText.text += letter;
+
+            yield return new WaitForSeconds(
+                characterDelay);
         }
     }
 
-    return bounds.center;
-}
+    private Vector2 GetRandomPointInSpawnArea()
+    {
+        if (spawnArea == null)
+        {
+            return transform.position;
+        }
+
+        Bounds bounds = spawnArea.bounds;
+
+        for (int i = 0; i < 100; i++)
+        {
+            Vector2 point = new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y));
+
+            if (spawnArea.OverlapPoint(point))
+            {
+                return point;
+            }
+        }
+
+        return bounds.center;
+    }
 }
