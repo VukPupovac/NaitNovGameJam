@@ -1389,8 +1389,8 @@ MonoBehaviour:
   responsePopupPrefab: {fileID: 7293864335851913828, guid: 78e491a55fe47de469d541e45eb59276, type: 3}
   responseSpawnPoint: {fileID: 1713437178}
   responsePopupParent: {fileID: 1988419035}
-  minResponseDuration: 20
-  maxResponseDuration: 30
+  minResponseDuration: 10
+  maxResponseDuration: 15
   characterDelay: 0.05
 --- !u!4 &615513844
 Transform:
