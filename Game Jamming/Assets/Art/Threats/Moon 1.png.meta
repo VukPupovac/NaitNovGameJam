@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 1ea4804d8022235438c9ffe9f1cd4771
+guid: 419fb1dab71cad843813bd60f303f709
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2873511767565785334
-    second: meteot_0
+      213: 1236305584006548768
+    second: Moon 1_0
   - first:
-      213: -3131304986604473232
-    second: meteot_1
+      213: 1522203228896741342
+    second: Moon 1_1
+  - first:
+      213: 5929366221816933151
+    second: Moon 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meteot_0
+      name: Moon 1_0
       rect:
         serializedVersion: 2
-        x: 2794
-        y: 2003
-        width: 8
-        height: 14
+        x: 444
+        y: 37
+        width: 1032
+        height: 1019
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a07265c954c3f18d0800000000000000
-      internalID: -2873511767565785334
+      spriteID: 02dca80e06d382110800000000000000
+      internalID: 1236305584006548768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: meteot_1
+      name: Moon 1_1
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 221
-        width: 1992
-        height: 1751
+        x: 869
+        y: 1054
+        width: 17
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 074f70e74be5b84d0800000000000000
-      internalID: -3131304986604473232
+      spriteID: ed7c75e85c3ff1510800000000000000
+      internalID: 1522203228896741342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon 1_2
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 1054
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b2992e927594250800000000000000
+      internalID: 5929366221816933151
       vertices: []
       indices: 
       edges: []
@@ -173,8 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      meteot_0: -2873511767565785334
-      meteot_1: -3131304986604473232
+      Moon 1_0: 1236305584006548768
+      Moon 1_1: 1522203228896741342
+      Moon 1_2: 5929366221816933151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
