@@ -1389,8 +1389,8 @@ MonoBehaviour:
   responsePopupPrefab: {fileID: 7293864335851913828, guid: 78e491a55fe47de469d541e45eb59276, type: 3}
   responseSpawnPoint: {fileID: 1713437178}
   responsePopupParent: {fileID: 1988419035}
-  minResponseDuration: 10
-  maxResponseDuration: 15
+  minResponseDuration: 5
+  maxResponseDuration: 5
   characterDelay: 0.05
 --- !u!4 &615513844
 Transform:
@@ -1458,8 +1458,8 @@ MonoBehaviour:
   leftSpawnPoint: {fileID: 783994894}
   rightSpawnPoint: {fileID: 514411737}
   dialogueList: {fileID: 11400000, guid: 5b03152ea74168747a35a2442b67844a, type: 2}
-  minTime: 1
-  maxTime: 5
+  minTime: 10
+  maxTime: 15
   popupDuration: 60
   characterDelay: 0.05
   spawnArea: {fileID: 1988419036}
