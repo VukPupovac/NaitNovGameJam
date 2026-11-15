@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Threat
   ThreatData: {fileID: 11400000, guid: 20833cf2b777bd542beea2caa513f76e, type: 2}
+  explosion: {fileID: 7543693807501685024, guid: 2051ba5b540844645be4fe14a7bde5c9, type: 3}
 --- !u!1 &4557136255957020067
 GameObject:
   m_ObjectHideFlags: 0
