@@ -12,6 +12,7 @@ public class Threat : MonoBehaviour
     private Vector3 randomDrift;
     private bool dodged = false;
     private float dodgeCounter = 0;
+    [SerializeField] private GameObject explosion;
 
 
     void Start()
@@ -33,6 +34,14 @@ public class Threat : MonoBehaviour
 
     void OnDisable()
     {
+        if (!dodged)
+        {
+            Instantiate(
+            explosion,
+            gameObject.transform.position,
+            Quaternion.identity);
+        }
+        
         if (Manager != null)
         {
             Manager.incomingThreats.Remove(this);
@@ -73,12 +82,12 @@ public class Threat : MonoBehaviour
 
     public void Dodged()
     {
-        if (ThreatData.threatType == ThreatType.Satellite || (ThreatData.threatType == ThreatType.Moon && dodgeCounter >=2))
+        if (ThreatData.threatType == ThreatType.Moon && dodgeCounter >=2)
         {
             dodged = true;
             dodgeCounter = 0;
         }
-        else if (ThreatData.threatType == ThreatType.Moon)
+        else
         {
             dodgeCounter += 1;
             closeness -= 0.2f;

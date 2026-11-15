@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 7aaecbfaceb37394abb9b548ed450cc3
+guid: a076c9669fd614141a15cdb780adc420
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 456489061265503129
-    second: human spceship_0
+      213: 6502214472921131371
+    second: Minionlite 1_0
   - first:
-      213: 3670967290649185815
-    second: human spceship_1
+      213: -4776653347623983475
+    second: Minionlite 1_1
+  - first:
+      213: -8652912083433357503
+    second: Minionlite 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: human spceship_0
+      name: Minionlite 1_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 669
-        width: 14
-        height: 38
+        x: 4
+        y: 561
+        width: 13
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 993f494f166c55600800000000000000
-      internalID: 456489061265503129
+      spriteID: b692ed7ec918c3a50800000000000000
+      internalID: 6502214472921131371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human spceship_1
+      name: Minionlite 1_1
       rect:
         serializedVersion: 2
-        x: 185
-        y: 298
-        width: 1735
-        height: 730
+        x: 6
+        y: 330
+        width: 1899
+        height: 425
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71e093d1d45e1f230800000000000000
-      internalID: 3670967290649185815
+      spriteID: d8621bf861be5bdb0800000000000000
+      internalID: -4776653347623983475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minionlite 1_2
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 560
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ff4422e4eaae780800000000000000
+      internalID: -8652912083433357503
       vertices: []
       indices: 
       edges: []
@@ -173,8 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      human spceship_0: 456489061265503129
-      human spceship_1: 3670967290649185815
+      Minionlite 1_0: 6502214472921131371
+      Minionlite 1_1: -4776653347623983475
+      Minionlite 1_2: -8652912083433357503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

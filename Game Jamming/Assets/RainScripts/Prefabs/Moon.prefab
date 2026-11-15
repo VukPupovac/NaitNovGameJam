@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Threat
   ThreatData: {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
+  explosion: {fileID: 7543693807501685024, guid: 2051ba5b540844645be4fe14a7bde5c9, type: 3}
 --- !u!114 &-475384277980723841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9083969447635318612, guid: 50ac67c00b1490442a22645f33b23386, type: 3}
+  m_Sprite: {fileID: 1236305584006548768, guid: 419fb1dab71cad843813bd60f303f709, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

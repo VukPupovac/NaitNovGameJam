@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3670967290649185815, guid: 7aaecbfaceb37394abb9b548ed450cc3, type: 3}
+  m_Sprite: {fileID: -6867823096272196529, guid: 500a942e07372094681df7481178e6f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14, y: 0.38}
+  m_Size: {x: 11.04, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603711161056488908}
   - component: {fileID: 8034126015191629241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Threat
   ThreatData: {fileID: 11400000, guid: fcb2add7f05191445ba4a7da5e233b46, type: 2}
+  explosion: {fileID: 7543693807501685024, guid: 2051ba5b540844645be4fe14a7bde5c9, type: 3}

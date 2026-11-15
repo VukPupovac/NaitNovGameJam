@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int cowCount = 0;
     public int currentPlayerHealth;
 
+
     [SerializeField] private SpriteRenderer shipHud;
     [SerializeField] private SpriteRenderer glassHud;
     [SerializeField] private SpriteRenderer earthBack;
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         currentPlayerHealth = playerMaxHealth;
+
+
     }
 
     // Update is called once per frame
@@ -60,32 +63,32 @@ public class GameManager : MonoBehaviour
             Win();
         }
 
-        if (currentPlayerHealth >= 60)
+        if (currentPlayerHealth >= 60 && shipHud != null)
         {
             shipHud.sprite = healthyHud;
             glassHud.sprite = null;
         }
-        else if (currentPlayerHealth >= 30)
+        else if (currentPlayerHealth >= 30 && shipHud != null)
         {
             shipHud.sprite = medHud;
             glassHud.sprite = medGlassHud;
         }
-        else
+        else if (currentPlayerHealth < 30 && shipHud != null)
         {
             shipHud.sprite = lowHud;
             glassHud.sprite = lowGlassHud;
         }
 
 
-        if (earthHealth >= 60)
+        if (earthHealth >= 60 && earthBack != null)
         {
             earthBack.sprite = healthyEarth;
         }
-        else if (earthHealth >= 30)
+        else if (earthHealth >= 30 && earthBack != null)
         {
             earthBack.sprite = medEarth;
         }
-        else
+        else if (earthHealth < 30 && earthBack != null)
         {
             earthBack.sprite = lowEarth;
         }

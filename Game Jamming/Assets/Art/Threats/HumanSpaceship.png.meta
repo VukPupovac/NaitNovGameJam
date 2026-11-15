@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2324b840e37b2dc4789e1c98f65f4b8f
+guid: 500a942e07372094681df7481178e6f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8793427780585340624
-    second: ClusterBomb_0
+      213: -6867823096272196529
+    second: HumanSpaceship_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClusterBomb_0
+      name: HumanSpaceship_0
       rect:
         serializedVersion: 2
-        x: 683
-        y: 66
-        width: 649
-        height: 976
+        x: 421
+        y: 0
+        width: 1104
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0de37d31af7880a70800000000000000
-      internalID: 8793427780585340624
+      spriteID: f4ce87ef74790b0a0800000000000000
+      internalID: -6867823096272196529
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ClusterBomb_0: 8793427780585340624
+      HumanSpaceship_0: -6867823096272196529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

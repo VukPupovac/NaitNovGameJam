@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 532405abde581da40b663242b1163f16
+guid: 53d4ac2168ca3a84285597b374458f83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5890828503606760369
-    second: missile_0
+      213: -6690206148019444834
+    second: Win Screen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: missile_0
+      name: Win Screen_0
       rect:
         serializedVersion: 2
-        x: 613
-        y: 74
-        width: 694
-        height: 941
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4ce5c9dfa29f3ea0800000000000000
-      internalID: -5890828503606760369
+      spriteID: e93aa2164fc9723a0800000000000000
+      internalID: -6690206148019444834
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      missile_0: -5890828503606760369
+      Win Screen_0: -6690206148019444834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
