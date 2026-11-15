@@ -19,7 +19,7 @@ public class NPCPopup : MonoBehaviour
     [SerializeField] private PopupDialogueSO dialogueList;
 
     [Header("Timing")]
-    [SerializeField] private float minTime = 5f;
+    [SerializeField] private float minTime = 10f;
     [SerializeField] private float maxTime = 15f;
     [SerializeField] private float popupDuration = 3f;
     [SerializeField] private float characterDelay = 0.05f;
