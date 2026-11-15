@@ -1,11 +1,11 @@
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set;}
+    public static GameManager Instance { get; private set; }
 
     public int playerMaxHealth = 100;
     public int earthHealth = 100;
@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int currentPlayerHealth;
 
     [SerializeField] private SpriteRenderer shipHud;
+    [SerializeField] private SpriteRenderer glassHud;
     [SerializeField] private SpriteRenderer earthBack;
 
 
@@ -20,16 +21,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite medHud;
     [SerializeField] private Sprite lowHud;
 
+    // [SerializeField] private Sprite healthyHud;
+    [SerializeField] private Sprite medGlassHud;
+    [SerializeField] private Sprite lowGlassHud;
+
     [SerializeField] private Sprite healthyEarth;
     [SerializeField] private Sprite medEarth;
     [SerializeField] private Sprite lowEarth;
 
 
     public List<Threat> incomingThreats = new List<Threat>();
-    
+
     private void Awake()
     {
-        if ( Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -45,7 +50,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if(currentPlayerHealth <= 0)
+        if (currentPlayerHealth <= 0)
         {
             Lose();
         }
@@ -55,17 +60,20 @@ public class GameManager : MonoBehaviour
             Win();
         }
 
-        if(currentPlayerHealth >= 60)
+        if (currentPlayerHealth >= 60)
         {
             shipHud.sprite = healthyHud;
+            glassHud.sprite = null;
         }
         else if (currentPlayerHealth >= 30)
         {
             shipHud.sprite = medHud;
+            glassHud.sprite = medGlassHud;
         }
         else
         {
             shipHud.sprite = lowHud;
+            glassHud.sprite = lowGlassHud;
         }
 
 
