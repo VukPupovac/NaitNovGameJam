@@ -3,6 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private GameObject target;
+    private Threat targetThreat;
 
     [SerializeField] private GameEvent fireEvent;
     [SerializeField] private GameEvent hitEvent;
@@ -39,25 +40,27 @@ public class Projectile : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, projectileSpeed * Time.deltaTime);
             }
-
-            // scale the scale of the object down per frame whilst it's existent
-            transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
-
-            if (transform.localScale.x <= minScale.x  || transform.localScale.y <= minScale.y)
-            {
-                hitEvent.Raise();
-                if (target == targetPlanet) // meaning our target is the earth
-                {
-                    gameManager.earthHealth -= damageAmount;
-                }
-                else if(target != targetPlanet)
-                { // destroy associated target that this projectile can affect
-                    //already determined by the layer mask used in find target
-                    Destroy(target);
-                }
-                Destroy(gameObject);
-            }
         }
+
+        // scale the scale of the object down per frame whilst it's existent
+        transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
+
+        if (transform.localScale.x <= minScale.x  || transform.localScale.y <= minScale.y)
+        {
+            hitEvent.Raise();
+            if (target == targetPlanet) // meaning our target is the earth
+            {
+                gameManager.earthHealth -= damageAmount;
+            }
+            else if(target != targetPlanet && target != null)
+            { // destroy associated target that this projectile can affect
+             //already determined by the layer mask used in find target
+                gameManager.incomingThreats.Remove(targetThreat);
+                Destroy(target);
+            }
+            Destroy(gameObject);
+        }
+        
     }
 
     public void FindTarget()
@@ -71,6 +74,7 @@ public class Projectile : MonoBehaviour
         {
             if (threat.gameObject.layer == layerNumber)
             {
+                targetThreat = threat;
                 target = threat.gameObject;
             }
         }
@@ -80,7 +84,5 @@ public class Projectile : MonoBehaviour
             target = targetPlanet;
         }
 
-
-        Debug.Log(target.name);
     }
 }
