@@ -3,20 +3,22 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private GameObject target;
-    private GameObject backupTarget;
 
     [SerializeField] private GameEvent fireEvent;
     [SerializeField] private GameEvent hitEvent;
 
+    private GameManager gameManager;
     [SerializeField] private LayerMask targetLayer;
-    [SerializeField] private LayerMask earthLayerMask;
+    private GameObject targetPlanet;
 
-    [SerializeField] private float scaleSpeed = 0.01f; //pretty much 1% scale down per fixed physics frame
+    [SerializeField] private float scaleSpeed = 0.01f; //scale down speed per frame
     [SerializeField] private float minScaleFactor = 0.1f;
 
     private Vector3 minScale;
     void Awake()
     {
+        targetPlanet = GameObject.Find("Earth");
+        gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         fireEvent.Raise();
         FindTarget();
         minScale = transform.localScale * minScaleFactor;
@@ -37,7 +39,15 @@ public class Projectile : MonoBehaviour
             if (transform.localScale.x <= minScale.x  && transform.localScale.y <= minScale.y)
             {
                 hitEvent.Raise();
-                // target.DamageTarget();
+                if (target == targetPlanet) // meaning our target is the earth
+                {
+                    //target.GetComponent<EarthController>().DamageEarth(); or some method of damaging the earth
+                }
+                else if(target != targetPlanet)
+                { // destroy associated target that this projectile can affect
+                    //already determined by the layer mask used in find target
+                    Destroy(target);
+                }
                 Destroy(gameObject);
             }
         }
@@ -46,27 +56,25 @@ public class Projectile : MonoBehaviour
     public void FindTarget()
     {
         int layerNumber = (int)Mathf.Log(targetLayer.value, 2);
-        int earthLayerNumber = (int)Mathf.Log(earthLayerMask.value, 2);
-        //search the scene for it's correct target on awake, if no target, target earth
-        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude);
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.layer == layerNumber)
-            {
-                target = obj; break; // get out of this loop as soon as possible
-            }
 
-            if (obj.layer == earthLayerNumber)
+
+        //search the scene for it's correct target on awake, if no target, target earth
+
+        foreach (Threat threat in gameManager.incomingThreats)
+        {
+            if (threat.gameObject.layer == layerNumber)
             {
-                backupTarget = obj; break;
+                target = threat.gameObject;
             }
         }
 
-        if (target == null && backupTarget != null)
+        if (target == null && targetPlanet != null)
         {
-            target = backupTarget;
+            target = targetPlanet;
         }
 
         transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+
+        Debug.Log(target.name);
     }
 }

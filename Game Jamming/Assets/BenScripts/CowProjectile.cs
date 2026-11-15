@@ -7,7 +7,7 @@ public class CowProjectile : MonoBehaviour
     [SerializeField] private GameEvent spawnEvent;
     [SerializeField] private GameEvent scoreEvent;
 
-    //[SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
 
     [SerializeField] private LayerMask targetLayer; // is always player
 
@@ -17,6 +17,7 @@ public class CowProjectile : MonoBehaviour
     private Vector3 maxScale; // cow increases in size as is going to player
     void Awake()
     {
+        gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         spawnEvent.Raise();
         FindTarget();
         maxScale = transform.localScale / maxScaleFactor; // gives it about 1 and a half seconds before it's at min scale
@@ -37,7 +38,7 @@ public class CowProjectile : MonoBehaviour
             if (transform.localScale.x >= maxScale.x && transform.localScale.y >= maxScale.y)
             {
                 scoreEvent.Raise();
-                // gameManager.CollectCow()
+                gameManager.cowCount += 1;
                 Destroy(gameObject);
             }
         }

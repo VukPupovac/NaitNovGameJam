@@ -47,6 +47,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             return; // on cooldown since last action, cannot act
         }
+        currentActTimer = cooldownTimer;
         Instantiate(LaserPrefab);
     }
 
@@ -56,7 +57,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             return; // on cooldown since last action, cannot act
         }
-
+        currentActTimer = cooldownTimer;
         Instantiate(UFOPrefab);
     }
 
@@ -66,6 +67,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             return; // on cooldown since last action, cannot act
         }
+        currentActTimer = cooldownTimer;
         Instantiate(AsteroidPrefab);
     }
 
@@ -75,6 +77,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             return; // on cooldown since last action, cannot act
         }
+        currentActTimer = cooldownTimer;
         Instantiate(CowPrefab);
     }
 
@@ -96,13 +99,17 @@ public class PlayerWeaponsSystem : MonoBehaviour
             return; // on cooldown since last action, cannot act
         }
 
-         if (gameManager.currentPlayerHealth == gameManager.playerMaxHealth)
-            {
-                currentActTimer = cooldownTimer;
-                return; // Player already at max Health
-            }
-         gameManager.currentPlayerHealth += repairAmount;
-         currentActTimer = cooldownTimer;
+        if (gameManager.currentPlayerHealth == gameManager.playerMaxHealth)
+        {
+            currentActTimer = cooldownTimer;
+            return; // Player already at max Health
+        }
+        gameManager.currentPlayerHealth += repairAmount;
+        if (gameManager.currentPlayerHealth > gameManager.playerMaxHealth)
+        {
+            gameManager.currentPlayerHealth = gameManager.playerMaxHealth;
+        }
+        currentActTimer = cooldownTimer;
         
     }
 
