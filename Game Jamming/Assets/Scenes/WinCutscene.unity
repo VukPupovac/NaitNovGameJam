@@ -524,8 +524,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294901797
+  m_fontColor: {r: 0.1465131, g: 0, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -607,7 +607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3154a154bddf941abdd00c3796a9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  gameManager: {fileID: 0}
   textBox: {fileID: 1566807797}
 --- !u!1 &1801709954
 GameObject:
