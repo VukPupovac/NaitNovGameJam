@@ -1020,12 +1020,14 @@ MonoBehaviour:
   earthHealth: 100
   cowCount: 0
   currentPlayerHealth: 0
-  healthyHud: {fileID: 0}
-  medHud: {fileID: 0}
-  lowHud: {fileID: 0}
-  healthyEarth: {fileID: 0}
-  medEarth: {fileID: 0}
-  lowEarth: {fileID: 0}
+  shipHud: {fileID: 1422603060}
+  earthBack: {fileID: 1884060896}
+  healthyHud: {fileID: 21300000, guid: fc7437df55b3a7a4c9a79d9dba902919, type: 3}
+  medHud: {fileID: 21300000, guid: add5948a50aff3c48b9154409cc45692, type: 3}
+  lowHud: {fileID: 21300000, guid: 0c2a1f8a59545504e90cb16b4a9b8cfd, type: 3}
+  healthyEarth: {fileID: -3674537271706219240, guid: c87c0fbc65edb614789a26ec2303e233, type: 3}
+  medEarth: {fileID: 6742914062487108879, guid: 9f7672c5140168e4e8a4a5cb959c51bd, type: 3}
+  lowEarth: {fileID: 7726669938516269299, guid: 0d3051848a0b5ff42ac28999abeb3e28, type: 3}
   incomingThreats: []
 --- !u!4 &1021466110
 Transform:
@@ -1186,7 +1188,7 @@ SpriteRenderer:
   m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1497163722
 GameObject:

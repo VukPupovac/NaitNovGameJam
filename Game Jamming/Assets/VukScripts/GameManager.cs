@@ -12,17 +12,17 @@ public class GameManager : MonoBehaviour
     public int cowCount = 0;
     public int currentPlayerHealth;
 
-    private Image shipHud;
-    private Image earthBack;
+    [SerializeField] private SpriteRenderer shipHud;
+    [SerializeField] private SpriteRenderer earthBack;
 
 
-    [SerializeField] private Image healthyHud;
-    [SerializeField] private Image medHud;
-    [SerializeField] private Image lowHud;
+    [SerializeField] private Sprite healthyHud;
+    [SerializeField] private Sprite medHud;
+    [SerializeField] private Sprite lowHud;
 
-    [SerializeField] private Image healthyEarth;
-    [SerializeField] private Image medEarth;
-    [SerializeField] private Image lowEarth;
+    [SerializeField] private Sprite healthyEarth;
+    [SerializeField] private Sprite medEarth;
+    [SerializeField] private Sprite lowEarth;
 
 
     public List<Threat> incomingThreats = new List<Threat>();
@@ -57,29 +57,29 @@ public class GameManager : MonoBehaviour
 
         if(currentPlayerHealth >= 60)
         {
-            shipHud = healthyHud;
+            shipHud.sprite = healthyHud;
         }
         else if (currentPlayerHealth >= 30)
         {
-            shipHud = medHud;
+            shipHud.sprite = medHud;
         }
         else
         {
-            shipHud = lowHud;
+            shipHud.sprite = lowHud;
         }
 
 
         if (earthHealth >= 60)
         {
-            earthBack = healthyEarth;
+            earthBack.sprite = healthyEarth;
         }
         else if (earthHealth >= 30)
         {
-            earthBack = medEarth;
+            earthBack.sprite = medEarth;
         }
         else
         {
-            earthBack = lowEarth;
+            earthBack.sprite = lowEarth;
         }
 
         Debug.Log(incomingThreats.Count);
