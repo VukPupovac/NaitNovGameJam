@@ -34,10 +34,13 @@ public class Threat : MonoBehaviour
 
     void OnDisable()
     {
-        Instantiate(
+        if (!dodged)
+        {
+            Instantiate(
             explosion,
             gameObject.transform.position,
             Quaternion.identity);
+        }
         
         if (Manager != null)
         {
