@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: b97630dd57e5bdc408854b3ea1671fe8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5974858039809625723
+    second: DisabledButtons_0
+  - first:
+      213: -3736412991247925564
+    second: DisabledButtons_1
+  - first:
+      213: 6951356404451906944
+    second: DisabledButtons_2
+  - first:
+      213: -1143081809643508670
+    second: DisabledButtons_3
+  - first:
+      213: -2121681358310472167
+    second: DisabledButtons_4
+  - first:
+      213: -5070503855368457724
+    second: DisabledButtons_5
+  - first:
+      213: 1248355719758407355
+    second: DisabledButtons_6
+  - first:
+      213: 7875608134665635097
+    second: DisabledButtons_7
+  - first:
+      213: 2908180565152595431
+    second: DisabledButtons_8
+  - first:
+      213: 737222748819172181
+    second: DisabledButtons_9
+  - first:
+      213: -4357979189775962022
+    second: DisabledButtons_10
+  - first:
+      213: -4654262154079876030
+    second: DisabledButtons_11
+  - first:
+      213: -4526853553292433497
+    second: DisabledButtons_12
+  - first:
+      213: 6720082257486257298
+    second: DisabledButtons_13
+  - first:
+      213: 299242349223397880
+    second: DisabledButtons_14
+  - first:
+      213: -883164175080785981
+    second: DisabledButtons_15
+  - first:
+      213: 8337427118373741949
+    second: DisabledButtons_16
+  - first:
+      213: -729062655190904045
+    second: DisabledButtons_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DisabledButtons_0
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 677
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e4d362bb5fae250800000000000000
+      internalID: 5974858039809625723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_1
+      rect:
+        serializedVersion: 2
+        x: 3331
+        y: 675
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce338a4e28952cc0800000000000000
+      internalID: -3736412991247925564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 130
+        width: 630
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0851e7ae1dd287060800000000000000
+      internalID: 6951356404451906944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_3
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 503
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24cecf28625f220f0800000000000000
+      internalID: -1143081809643508670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_4
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 501
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9160657bb064e82e0800000000000000
+      internalID: -2121681358310472167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_5
+      rect:
+        serializedVersion: 2
+        x: 3188
+        y: 128
+        width: 613
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402b384bb93f1a9b0800000000000000
+      internalID: -5070503855368457724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6e68db9ec035110800000000000000
+      internalID: 1248355719758407355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_7
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 36
+        width: 386
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9150ce82fd7cb4d60800000000000000
+      internalID: 7875608134665635097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_8
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 34
+        width: 386
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed7d98d0deeb5820800000000000000
+      internalID: 2908180565152595431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_9
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 104
+        width: 685
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b24bf1f242b3a00800000000000000
+      internalID: 737222748819172181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_10
+      rect:
+        serializedVersion: 2
+        x: 2757
+        y: 34
+        width: 387
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50fbd634095583c0800000000000000
+      internalID: -4357979189775962022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_11
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 311
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c468eea3db86fb0800000000000000
+      internalID: -4654262154079876030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_12
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 101
+        width: 112
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a72ac57da26d21c0800000000000000
+      internalID: -4526853553292433497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 102
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c9fda6537824d50800000000000000
+      internalID: 6720082257486257298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_14
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 32
+        width: 386
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9c637c45f172400800000000000000
+      internalID: 299242349223397880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_15
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 96
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c775f9acde5eb3f0800000000000000
+      internalID: -883164175080785981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_16
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 104
+        width: 83
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7520636acd74b370800000000000000
+      internalID: 8337427118373741949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DisabledButtons_17
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 33
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313d75ab069d1e5f0800000000000000
+      internalID: -729062655190904045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DisabledButtons_0: 5974858039809625723
+      DisabledButtons_1: -3736412991247925564
+      DisabledButtons_10: -4357979189775962022
+      DisabledButtons_11: -4654262154079876030
+      DisabledButtons_12: -4526853553292433497
+      DisabledButtons_13: 6720082257486257298
+      DisabledButtons_14: 299242349223397880
+      DisabledButtons_15: -883164175080785981
+      DisabledButtons_16: 8337427118373741949
+      DisabledButtons_17: -729062655190904045
+      DisabledButtons_2: 6951356404451906944
+      DisabledButtons_3: -1143081809643508670
+      DisabledButtons_4: -2121681358310472167
+      DisabledButtons_5: -5070503855368457724
+      DisabledButtons_6: 1248355719758407355
+      DisabledButtons_7: 7875608134665635097
+      DisabledButtons_8: 2908180565152595431
+      DisabledButtons_9: 737222748819172181
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
