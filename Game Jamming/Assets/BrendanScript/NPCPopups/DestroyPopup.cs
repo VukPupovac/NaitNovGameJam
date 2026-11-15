@@ -12,7 +12,8 @@ public class DestroyPopup : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ResponsePopupManager.Instance.ShowResponse(responseMessage);
+        ResponsePopupManager.Instance.ShowResponse(
+            responseMessage);
 
         Destroy(gameObject);
     }

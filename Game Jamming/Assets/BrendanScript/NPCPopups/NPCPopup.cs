@@ -9,7 +9,7 @@ public class NPCPopup : MonoBehaviour
     [SerializeField] private Transform popupParent;
 
     [Header("Dialogue")]
-    [SerializeField] private PopupDialogueSO[] dialogues;
+    [SerializeField] private PopupDialogueSO dialogueList;
 
     [Header("Timing")]
     [SerializeField] private float minTime = 5f;
@@ -42,12 +42,13 @@ public class NPCPopup : MonoBehaviour
 
     private IEnumerator SpawnPopup()
     {
-        if (dialogues == null || dialogues.Length == 0)
+        if (dialogueList == null || dialogueList.dialogues.Count == 0)
         {
             yield break;
         }
 
-        PopupDialogueSO dialogue = dialogues[Random.Range(0, dialogues.Length)];
+        PopupDialogue dialogue = dialogueList.dialogues[
+            Random.Range(0, dialogueList.dialogues.Count)];
 
         Vector2 spawnPosition = GetRandomPointInSpawnArea();
 
@@ -72,7 +73,10 @@ public class NPCPopup : MonoBehaviour
             yield break;
         }
 
-        yield return StartCoroutine(TypeText(popupText, dialogue.message));
+        yield return StartCoroutine(
+            TypeText(
+                popupText,
+                dialogue.message));
 
         float timer = 0f;
 
@@ -89,7 +93,9 @@ public class NPCPopup : MonoBehaviour
         }
     }
 
-    private IEnumerator TypeText(TextMeshProUGUI popupText, string message)
+    private IEnumerator TypeText(
+        TextMeshProUGUI popupText,
+        string message)
     {
         popupText.text = "";
 

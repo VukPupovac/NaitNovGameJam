@@ -530,10 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCPopup
   popupPrefab: {fileID: 3066558407547040688, guid: 731fa1735a0d67743a2f51c191de4edb, type: 3}
   popupParent: {fileID: 829040461}
-  dialogues:
-  - {fileID: 11400000, guid: 14a9b1e53b8e48645a06d1d9e598498d, type: 2}
-  - {fileID: 11400000, guid: 9e1c788c9ead0344ebece9dfd3613884, type: 2}
-  - {fileID: 11400000, guid: a78a83464483b3147a1b50482c7abe6c, type: 2}
+  dialogueList: {fileID: 11400000, guid: 5b03152ea74168747a35a2442b67844a, type: 2}
   minTime: 1
   maxTime: 5
   popupDuration: 60
