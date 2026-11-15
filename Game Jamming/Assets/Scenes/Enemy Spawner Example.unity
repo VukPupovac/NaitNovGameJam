@@ -148,9 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581190262963f534f97af6c3cc49d8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  playerHealth: 100
+  playerMaxHealth: 100
   earthHealth: 100
   cowCount: 0
+  currentPlayerHealth: 0
+  incomingThreats: []
 --- !u!4 &695062350
 Transform:
   m_ObjectHideFlags: 0
