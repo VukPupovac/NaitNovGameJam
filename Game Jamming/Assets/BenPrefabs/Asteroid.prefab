@@ -109,8 +109,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 3072
-  earthLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  scaleSpeed: 0.3
+  scaleSpeed: 0.05
   minScaleFactor: 0.1
+  damageAmount: 10
+  projectileSpeed: 4

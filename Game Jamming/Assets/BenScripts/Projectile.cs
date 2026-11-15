@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float scaleSpeed = 0.01f; //scale down speed per frame
     [SerializeField] private float minScaleFactor = 0.1f;
     [SerializeField] private int damageAmount = 10;
+    [SerializeField] private float projectileSpeed = 3f;
 
     private Vector3 minScale;
     void Awake()
@@ -26,18 +27,23 @@ public class Projectile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (target != null)
         {
             // make sure we are pointing at our target
             Vector2 direction = target.transform.position - transform.position;
-            transform.right = direction; //  change to transform.right if our front is the right instead of the top
+            transform.up = direction; //  change to transform.right if our front is the right instead of the top
+
+            if (Vector2.Distance(transform.position, target.transform.position) > 0f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, projectileSpeed * Time.deltaTime);
+            }
 
             // scale the scale of the object down per frame whilst it's existent
             transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
 
-            if (transform.localScale.x <= minScale.x  && transform.localScale.y <= minScale.y)
+            if (transform.localScale.x <= minScale.x  || transform.localScale.y <= minScale.y)
             {
                 hitEvent.Raise();
                 if (target == targetPlanet) // meaning our target is the earth
@@ -74,7 +80,6 @@ public class Projectile : MonoBehaviour
             target = targetPlanet;
         }
 
-        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
 
         Debug.Log(target.name);
     }

@@ -11,6 +11,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
     public bool isDodging { get => currentDodgeTimer > 0f;} // for outside refernces
 
     [SerializeField] private int repairAmount = 15;
+    [SerializeField] private Transform firePoint;
 
 
 
@@ -49,7 +50,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
             return; // on cooldown since last action, cannot act
         }
         currentActTimer = cooldownTimer;
-        Instantiate(LaserPrefab);
+        Instantiate(LaserPrefab, firePoint);
     }
 
     public void UFO()
@@ -59,7 +60,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
             return; // on cooldown since last action, cannot act
         }
         currentActTimer = cooldownTimer;
-        Instantiate(UFOPrefab);
+        Instantiate(UFOPrefab, firePoint);
     }
 
     public void Asteroid()
@@ -69,7 +70,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
             return; // on cooldown since last action, cannot act
         }
         currentActTimer = cooldownTimer;
-        Instantiate(AsteroidPrefab);
+        Instantiate(AsteroidPrefab, firePoint);
     }
 
     public void Cow()
