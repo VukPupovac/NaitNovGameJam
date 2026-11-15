@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32c7e55bec4a014b8376a0fae6b8f06, type: 3}
   m_Name: Satellite
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSO
-  threatType: 3
+  threatType: 2
   prefab: {fileID: 1740261683667269971, guid: f8f9a654b2f778b43a41c2faa2f1c7c9, type: 3}
   cooldown: 10
   damage: 3
