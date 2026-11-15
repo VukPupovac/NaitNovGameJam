@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5996642203050108917, guid: f871a3d39f716db4ebad23221cd64989, type: 3}
+      propertyPath: Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 34c45be3a32816c46840934a04e41ec9, type: 2}
+    - target: {fileID: 7608367932898214835, guid: f871a3d39f716db4ebad23221cd64989, type: 3}
+      propertyPath: Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c073819535b2ae4a883c743de9626f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1583,7 +1591,6 @@ MonoBehaviour:
   earthHealth: 100
   cowCount: 0
   currentPlayerHealth: 0
-  spawner: {fileID: 1246651629}
   shipHud: {fileID: 1422603060}
   glassHud: {fileID: 1315446122}
   earthBack: {fileID: 1884060896}
@@ -1646,7 +1653,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: feb7c0b504a43de4e8d3a3327aef71f4, type: 2}
   - {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
   - {fileID: 11400000, guid: fcb2add7f05191445ba4a7da5e233b46, type: 2}
-  minSpawnInterval: 2
+  minSpawnInterval: 3
   maxSpawnInterval: 5
   spawnArea: {fileID: 449328341}
   maxsatelliteSpawnDistance: 1
@@ -1799,9 +1806,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 166037776}
     - target: {fileID: 7513214689700150331, guid: e8a227bd6df99b8488bc5d0e888b50ab, type: 3}
+      propertyPath: cooldownTimer
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513214689700150331, guid: e8a227bd6df99b8488bc5d0e888b50ab, type: 3}
       propertyPath: asteroidButton
       value: 
       objectReference: {fileID: 848667308}
+    - target: {fileID: 7513214689700150331, guid: e8a227bd6df99b8488bc5d0e888b50ab, type: 3}
+      propertyPath: dodgePerformed
+      value: 
+      objectReference: {fileID: 11400000, guid: 34c45be3a32816c46840934a04e41ec9, type: 2}
+    - target: {fileID: 7513214689700150331, guid: e8a227bd6df99b8488bc5d0e888b50ab, type: 3}
+      propertyPath: repairPerformed
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c073819535b2ae4a883c743de9626f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
