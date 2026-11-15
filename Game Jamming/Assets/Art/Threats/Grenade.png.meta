@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7aaecbfaceb37394abb9b548ed450cc3
+guid: 9a78ed45b25d41e408621d2593f3f912
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 456489061265503129
-    second: human spceship_0
-  - first:
-      213: 3670967290649185815
-    second: human spceship_1
+      213: 7374725294872216382
+    second: Grenade_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: human spceship_0
+      name: Grenade_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 669
-        width: 14
-        height: 38
+        x: 621
+        y: 36
+        width: 681
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 993f494f166c55600800000000000000
-      internalID: 456489061265503129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human spceship_1
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 298
-        width: 1735
-        height: 730
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71e093d1d45e1f230800000000000000
-      internalID: 3670967290649185815
+      spriteID: e3342fc2599485660800000000000000
+      internalID: 7374725294872216382
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      human spceship_0: 456489061265503129
-      human spceship_1: 3670967290649185815
+      Grenade_0: 7374725294872216382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
