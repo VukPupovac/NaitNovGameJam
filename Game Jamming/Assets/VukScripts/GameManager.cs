@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
         {
             earthBack = lowEarth;
         }
+
+        Debug.Log(incomingThreats.Count);
     }
 
     private void Lose()

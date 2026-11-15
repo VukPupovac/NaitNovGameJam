@@ -14,6 +14,7 @@ public class ThreatSpawner : MonoBehaviour
     [SerializeField] private float maxsatelliteSpawnDistance = 1f;
     [SerializeField] private float minsatelliteSpawnDistance = 0.3f;
 
+    private GameManager gameManager;
     private float spawnInterval;
 
     private Dictionary<ThreatType, float> nextSpawnTimes = new();
@@ -23,6 +24,11 @@ public class ThreatSpawner : MonoBehaviour
     private void Start() // Replace with Game manager
     {
         StartSpawning();
+    }
+
+    private void Awake()
+    {
+        gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
     }
 
     public void StartSpawning()
@@ -138,7 +144,6 @@ public class ThreatSpawner : MonoBehaviour
                 return point;
             }
         }
-
         return bounds.center;
     }
 

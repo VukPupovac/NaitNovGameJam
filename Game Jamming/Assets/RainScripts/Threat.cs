@@ -32,7 +32,7 @@ public class Threat : MonoBehaviour
         if (Manager != null)
         {
             Manager.incomingThreats.Add(this);
-        }        
+        }
     }
 
     void OnDisable()
