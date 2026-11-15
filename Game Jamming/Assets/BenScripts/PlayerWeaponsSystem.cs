@@ -21,6 +21,8 @@ public class PlayerWeaponsSystem : MonoBehaviour
     [SerializeField] private GameObject UFOPrefab;
     [SerializeField] private GameObject AsteroidPrefab;
     [SerializeField] private GameObject CowPrefab;
+    [SerializeField] private GameEvent dodgePerformed;
+    [SerializeField] private GameEvent repairPerformed;
 
     [Header("Button Image Changes")]
     [SerializeField] private Sprite laserImg;
@@ -135,6 +137,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
 
         currentDodgeTimer = dodgeTimer;
         currentActTimer = cooldownTimer;
+        dodgePerformed.Raise();
     }
 
     public void Repair()
@@ -155,6 +158,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
             gameManager.currentPlayerHealth = gameManager.playerMaxHealth;
         }
         currentActTimer = cooldownTimer;
+        repairPerformed.Raise();
         
     }
 

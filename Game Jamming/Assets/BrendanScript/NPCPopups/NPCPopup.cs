@@ -8,11 +8,18 @@ public class NPCPopup : MonoBehaviour
     [SerializeField] private GameObject popupPrefab;
     [SerializeField] private Transform popupParent;
 
+    [Header("Portraits")]
+    [SerializeField] private GameObject png1Prefab;
+    [SerializeField] private GameObject png2Prefab;
+
+    [SerializeField] private Transform leftSpawnPoint;
+    [SerializeField] private Transform rightSpawnPoint;
+
     [Header("Dialogue")]
     [SerializeField] private PopupDialogueSO dialogueList;
 
     [Header("Timing")]
-    [SerializeField] private float minTime = 5f;
+    [SerializeField] private float minTime = 10f;
     [SerializeField] private float maxTime = 15f;
     [SerializeField] private float popupDuration = 3f;
     [SerializeField] private float characterDelay = 0.05f;
@@ -58,6 +65,28 @@ public class NPCPopup : MonoBehaviour
             Quaternion.identity,
             popupParent);
 
+        GameObject portrait = null;
+
+        // Randomly choose portrait
+        bool usePng1 = Random.value < 0.5f;
+
+        if (usePng1)
+        {
+            portrait = Instantiate(
+                png1Prefab,
+                rightSpawnPoint.position,
+                Quaternion.identity,
+                rightSpawnPoint);
+        }
+        else
+        {
+            portrait = Instantiate(
+                png2Prefab,
+                leftSpawnPoint.position,
+                Quaternion.identity,
+                leftSpawnPoint);
+        }
+
         TextMeshProUGUI popupText = popup.GetComponentInChildren<TextMeshProUGUI>();
 
         DestroyPopup destroyPopup = popup.GetComponent<DestroyPopup>();
@@ -90,6 +119,11 @@ public class NPCPopup : MonoBehaviour
         if (popup != null)
         {
             Destroy(popup);
+        }
+
+        if (portrait != null)
+        {
+            Destroy(portrait);
         }
     }
 

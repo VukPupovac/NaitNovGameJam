@@ -34,7 +34,7 @@ public class Threat : MonoBehaviour
 
     void OnDisable()
     {
-        if (!dodged)
+        if (!dodged && closeness >= 10)
         {
             Instantiate(
             explosion,
