@@ -506,7 +506,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 166037778}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -698,7 +698,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 167971572}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1175,7 +1175,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 377158254}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1496,7 +1496,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 848667310}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1583,6 +1583,7 @@ MonoBehaviour:
   earthHealth: 100
   cowCount: 0
   currentPlayerHealth: 0
+  spawner: {fileID: 1246651629}
   shipHud: {fileID: 1422603060}
   glassHud: {fileID: 1315446122}
   earthBack: {fileID: 1884060896}
@@ -1626,7 +1627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1246651629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,7 +2206,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1537594868}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2488,7 +2489,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1900243441}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
