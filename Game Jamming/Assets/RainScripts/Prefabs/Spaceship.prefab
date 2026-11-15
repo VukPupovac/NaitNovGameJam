@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603711161056488908}
   - component: {fileID: 8034126015191629241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Threat
   ThreatData: {fileID: 11400000, guid: fcb2add7f05191445ba4a7da5e233b46, type: 2}
+  explosion: {fileID: 7543693807501685024, guid: 2051ba5b540844645be4fe14a7bde5c9, type: 3}
