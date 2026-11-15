@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Projectile : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Projectile : MonoBehaviour
 
     private GameManager gameManager;
     [SerializeField] private LayerMask targetLayer;
+    private List<int> targetLayerIndices = new();
     private GameObject targetPlanet;
 
     [SerializeField] private float scaleSpeed = 0.01f; //scale down speed per frame
@@ -21,6 +24,8 @@ public class Projectile : MonoBehaviour
     void Awake()
     {
         targetPlanet = GameObject.Find("Earth");
+
+        GetLayerIndices(targetLayer);
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         fireEvent.Raise();
         FindTarget();
@@ -65,18 +70,20 @@ public class Projectile : MonoBehaviour
 
     public void FindTarget()
     {
-        int layerNumber = (int)Mathf.Log(targetLayer.value, 2);
 
 
         //search the scene for it's correct target on awake, if no target, target earth
 
         foreach (Threat threat in gameManager.incomingThreats)
         {
-            if (threat.gameObject.layer == layerNumber)
+            foreach (int i in targetLayerIndices)
             {
-                targetThreat = threat;
-                target = threat.gameObject;
-                break;
+                if (threat.gameObject.layer == i)
+                {
+                    targetThreat = threat;
+                    target = threat.gameObject;
+                    break;
+                }
             }
         }
 
@@ -85,5 +92,17 @@ public class Projectile : MonoBehaviour
             target = targetPlanet;
         }
 
+    }
+
+
+    private void GetLayerIndices(LayerMask layerMask)
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            if((layerMask.value & (1 << i)) != 0)
+            {
+                targetLayerIndices.Add(i);
+            }
+        }
     }
 }
