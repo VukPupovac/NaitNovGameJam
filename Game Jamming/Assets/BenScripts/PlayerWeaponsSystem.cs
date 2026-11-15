@@ -22,21 +22,30 @@ public class PlayerWeaponsSystem : MonoBehaviour
     [SerializeField] private GameObject AsteroidPrefab;
     [SerializeField] private GameObject CowPrefab;
 
-    [SerializeField] private Image laserImg;
-    [SerializeField] private Image repairImg;
-    [SerializeField] private Image dodgeImg;
-    [SerializeField] private Image funImg;
-    [SerializeField] private Image cowImg;
-    [SerializeField] private Image asteroidImg;
-    [SerializeField] private Image UFOImg;
+    [Header("Button Image Changes")]
+    [SerializeField] private Sprite laserImg;
+    [SerializeField] private Sprite repairImg;
+    [SerializeField] private Sprite dodgeImg;
+    [SerializeField] private Sprite funImg;
+    [SerializeField] private Sprite cowImg;
+    [SerializeField] private Sprite asteroidImg;
+    [SerializeField] private Sprite UFOImg;
 
-    [SerializeField] private Image newLaser;
-    [SerializeField] private Image newRepair;
-    [SerializeField] private Image newDodge;
-    [SerializeField] private Image newFun;
-    [SerializeField] private Image newCow;
-    [SerializeField] private Image newAsteroid;
-    [SerializeField] private Image newUFO;
+    [SerializeField] private Sprite newLaser;
+    [SerializeField] private Sprite newRepair;
+    [SerializeField] private Sprite newDodge;
+    [SerializeField] private Sprite newFun;
+    [SerializeField] private Sprite newCow;
+    [SerializeField] private Sprite newAsteroid;
+    [SerializeField] private Sprite newUFO;
+
+    [SerializeField] private SpriteRenderer laserButton;
+    [SerializeField] private SpriteRenderer repairButton;
+    [SerializeField] private SpriteRenderer dodgeButton;
+    [SerializeField] private SpriteRenderer funButton;
+    [SerializeField] private SpriteRenderer cowButton;
+    [SerializeField] private SpriteRenderer asteroidButton;
+    [SerializeField] private SpriteRenderer UFOButton;
 
     private void Awake()
     {
@@ -50,6 +59,24 @@ public class PlayerWeaponsSystem : MonoBehaviour
         {
             Debug.Log("Can't Act");
             currentActTimer -= Time.deltaTime;
+
+            laserButton.sprite = newLaser;
+            repairButton.sprite = newRepair;
+            funButton.sprite = newFun;
+            cowButton.sprite = newCow;
+            asteroidButton.sprite = newAsteroid;
+            dodgeButton.sprite = newDodge;
+            UFOButton.sprite = newUFO;
+        }
+        else
+        {
+            laserButton.sprite = laserImg;
+            repairButton.sprite = repairImg;
+            funButton.sprite = funImg;
+            cowButton.sprite = cowImg;
+            asteroidButton.sprite = asteroidImg;
+            dodgeButton.sprite = dodgeImg;
+            UFOButton.sprite = UFOImg;
         }
 
         if (currentDodgeTimer > 0f)
