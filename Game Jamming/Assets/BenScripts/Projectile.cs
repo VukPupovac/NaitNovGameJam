@@ -76,6 +76,7 @@ public class Projectile : MonoBehaviour
             {
                 targetThreat = threat;
                 target = threat.gameObject;
+                break;
             }
         }
 

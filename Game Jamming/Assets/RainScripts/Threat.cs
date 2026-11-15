@@ -10,12 +10,16 @@ public class Threat : MonoBehaviour
     private GameManager Manager;
     private float closeness = 0; 
     private Vector3 randomDrift;
+    private bool dodged = false;
+    private float dodgeCounter = 0;
+
 
     void Start()
     {
         if(GameManager.Instance != null)
         {
             Manager = GameManager.Instance;
+            Manager.incomingThreats.Add(this);
         }
         if(ThreatData.threatType != ThreatType.Moon && ThreatData.threatType != ThreatType.Satellite)
         {
@@ -24,14 +28,6 @@ public class Threat : MonoBehaviour
         else
         {
             randomDrift = new Vector3(UnityEngine.Random.Range(7f,10f), UnityEngine.Random.Range(-1f,1f), 0); // Special Random Drift for The Moon and Sattelites. Always moves significantly to the right.
-        }
-    }
-
-    void OnEnable()
-    {
-        if (Manager != null)
-        {
-            Manager.incomingThreats.Add(this);
         }
     }
 
@@ -48,18 +44,44 @@ public class Threat : MonoBehaviour
     {
         gameObject.transform.localScale = new Vector3(closeness/2, closeness/2, 1); // Scale the Threat based on how close it is.
 
-        if (closeness >= 10)
+        if(!dodged)
         {
-            Manager.currentPlayerHealth -= ThreatData.damage;
-            Destroy(gameObject);
+            if (closeness >= 10)
+            {
+                Manager.currentPlayerHealth -= ThreatData.damage;
+                Destroy(gameObject);
+            }
+            closeness += Time.deltaTime * ThreatData.speed; 
+
+            gameObject.transform.position = gameObject.transform.position + randomDrift/(10/ThreatData.speed)*Time.deltaTime; // Apply Random Drift
+
+            if(ThreatData.threatType == ThreatType.Rocket) // Make the rocket spin!
+            {
+                gameObject.transform.eulerAngles += new Vector3(0,0,60)*Time.deltaTime;
+            }
         }
-        closeness += Time.deltaTime * ThreatData.speed; 
-
-        gameObject.transform.position = gameObject.transform.position + randomDrift/(10/ThreatData.speed)*Time.deltaTime; // Apply Random Drift
-
-        if(ThreatData.threatType == ThreatType.Rocket) // Make the rocket spin!
+        else
         {
-            gameObject.transform.eulerAngles += new Vector3(0,0,60)*Time.deltaTime;
+            gameObject.transform.position = gameObject.transform.position + new Vector3(-10,0,0)*Time.deltaTime;
+            dodgeCounter += Time.deltaTime;
+            if (dodgeCounter >= 3)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    public void Dodged()
+    {
+        if (ThreatData.threatType == ThreatType.Satellite || (ThreatData.threatType == ThreatType.Moon && dodgeCounter >=2))
+        {
+            dodged = true;
+            dodgeCounter = 0;
+        }
+        else if (ThreatData.threatType == ThreatType.Moon)
+        {
+            dodgeCounter += 1;
+            closeness -= 0.2f;
         }
     }
 
