@@ -96,7 +96,7 @@ public class ThreatSpawner : MonoBehaviour
             return transform.position;
         }
 
-        if (threat.threatType == ThreatType.Moon)
+        if (threat.threatType == ThreatType.Moon || threat.threatType == ThreatType.Satellite)
         {
             Camera cam = Camera.main;
 

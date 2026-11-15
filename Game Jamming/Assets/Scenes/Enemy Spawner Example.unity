@@ -152,6 +152,12 @@ MonoBehaviour:
   earthHealth: 100
   cowCount: 0
   currentPlayerHealth: 0
+  healthyHud: {fileID: 0}
+  medHud: {fileID: 0}
+  lowHud: {fileID: 0}
+  healthyEarth: {fileID: 0}
+  medEarth: {fileID: 0}
+  lowEarth: {fileID: 0}
   incomingThreats: []
 --- !u!4 &695062350
 Transform:
@@ -368,15 +374,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.064597, y: 1.0740021}
-      - {x: 0.3157779, y: 1.2395558}
-      - {x: -0.6929312, y: 1.0734315}
-      - {x: -1.3975012, y: 0.50501704}
-      - {x: -1.9410249, y: -0.56917226}
-      - {x: -1.569628, y: -0.86030734}
-      - {x: 1.6722089, y: -0.8749616}
-      - {x: 2.3198054, y: -0.39970073}
-      - {x: 1.5063901, y: 0.6139061}
+    - - {x: 3.3260493, y: 3.1883688}
+      - {x: 1.1370062, y: 3.7094812}
+      - {x: -2.384424, y: 3.8313003}
+      - {x: -4.8908024, y: 2.5090683}
+      - {x: -4.754051, y: -0.10952747}
+      - {x: -4.290725, y: -2.8643584}
+      - {x: -0.25829923, y: -3.7431452}
+      - {x: 3.6068113, y: -3.3781993}
+      - {x: 5.3122487, y: 0.8161498}
   m_UseDelaunayMesh: 1
 --- !u!4 &1600575109
 Transform:
@@ -423,9 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSpawner
   threats:
-  - {fileID: 11400000, guid: 5817bf58887d46b40b5e924076761e4c, type: 2}
-  - {fileID: 11400000, guid: 20833cf2b777bd542beea2caa513f76e, type: 2}
   - {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
+  - {fileID: 11400000, guid: 0b3c9866bf839f249ab79c209aabca92, type: 2}
   minSpawnInterval: 1
   maxSpawnInterval: 5
   spawnArea: {fileID: 1600575108}
