@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rocket
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSO
   threatType: 0
-  prefab: {fileID: 5273693162635516224, guid: 260085fbc66315049aa88ab492741580, type: 3}
-  cooldown: 1
-  damage: 1
-  speed: 1
+  prefab: {fileID: 7226641765916670312, guid: 937101ef3ac60394ca74522a9a0ac02e, type: 3}
+  cooldown: 2
+  damage: 5
+  speed: 1.2
