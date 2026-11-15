@@ -13,9 +13,19 @@ MonoBehaviour:
   m_Name: Dialogues
   m_EditorClassIdentifier: Assembly-CSharp::PopupDialogueSO
   dialogues:
-  - message: I am the wife
-    response: Hello Wife
-  - message: HUSBANDO
-    response: WIFEY
-  - message: Hey I-
-    response: zzzzzzz
+  - message: Honey come back to bed
+    response: "I\u2019m gaming"
+  - message: "Honey where\u2019s the milk"
+    response: "I\u2019m milking"
+  - message: Honey you have a meeting in the morning
+    response: "I\u2019m networking"
+  - message: Moo!
+    response: Moo?
+  - message: So are you gonna milk me or what?
+    response: I am married...
+  - message: "We\u2019re taking severe casualties sir"
+    response: It's worth it (for the milk)
+  - message: Our tractor beams seem to be almost exclusively picking up bovines sir
+    response: They hold the humans most valuable resource (the milk)
+  - message: "We\u2019ve struck one of their military bases sir"
+    response: "It shall all be mine soon (\u2018all\u2019 being the milk)"
