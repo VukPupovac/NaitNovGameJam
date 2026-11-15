@@ -12,7 +12,7 @@ public class ResponsePopupManager : MonoBehaviour
     [SerializeField] private Transform responsePopupParent;
 
     [Header("Settings")]
-    [SerializeField] private float minResponseDuration = 2f;
+    [SerializeField] private float minResponseDuration = 5f;
     [SerializeField] private float maxResponseDuration = 5f;
     [SerializeField] private float characterDelay = 0.05f;
 
