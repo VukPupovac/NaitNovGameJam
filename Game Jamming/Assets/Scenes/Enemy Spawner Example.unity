@@ -431,6 +431,8 @@ MonoBehaviour:
   threats:
   - {fileID: 11400000, guid: f83130a2c5cb48045a159f75ea4f4628, type: 2}
   - {fileID: 11400000, guid: 0b3c9866bf839f249ab79c209aabca92, type: 2}
+  - {fileID: 11400000, guid: 20833cf2b777bd542beea2caa513f76e, type: 2}
+  - {fileID: 11400000, guid: 5817bf58887d46b40b5e924076761e4c, type: 2}
   minSpawnInterval: 1
   maxSpawnInterval: 5
   spawnArea: {fileID: 1600575108}

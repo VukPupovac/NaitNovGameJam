@@ -11,6 +11,8 @@ public class ThreatSpawner : MonoBehaviour
     [SerializeField] private float minSpawnInterval = 1f;
     [SerializeField] private float maxSpawnInterval = 5f;
     [SerializeField] private PolygonCollider2D spawnArea;
+    [SerializeField] private float maxsatelliteSpawnDistance = 1f;
+    [SerializeField] private float minsatelliteSpawnDistance = 0.3f;
 
     private float spawnInterval;
 
@@ -25,6 +27,11 @@ public class ThreatSpawner : MonoBehaviour
 
     public void StartSpawning()
     {
+        foreach (ThreatSO threat in threats)
+        {
+            nextSpawnTimes[threat.threatType] = Time.time + threat.cooldown;
+        }
+
         if (spawnRoutine == null)
         {
             spawnRoutine = StartCoroutine(SpawnRoutine());
@@ -96,14 +103,22 @@ public class ThreatSpawner : MonoBehaviour
             return transform.position;
         }
 
-        if (threat.threatType == ThreatType.Moon || threat.threatType == ThreatType.Satellite)
+        if (threat.threatType == ThreatType.Moon)
         {
             Camera cam = Camera.main;
 
-            Vector3 viewportPos = new Vector3(
-                0f,                    // left edge
-                Random.value,          // random height
-                Mathf.Abs(cam.transform.position.z));
+            Vector3 viewportPos = new Vector3(0f, 0.5f, Mathf.Abs(cam.transform.position.z));
+
+            Vector3 worldPos = cam.ViewportToWorldPoint(viewportPos);
+
+            return new Vector2(worldPos.x, worldPos.y);
+        }
+
+        if (threat.threatType == ThreatType.Satellite)
+        {
+            Camera cam = Camera.main;
+
+            Vector3 viewportPos = new Vector3(0f, Random.Range(minsatelliteSpawnDistance, maxsatelliteSpawnDistance), Mathf.Abs(cam.transform.position.z));
 
             Vector3 worldPos = cam.ViewportToWorldPoint(viewportPos);
 
