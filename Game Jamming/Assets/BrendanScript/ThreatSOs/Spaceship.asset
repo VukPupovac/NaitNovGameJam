@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSO
   threatType: 3
   prefab: {fileID: 2654709774174257767, guid: ae8c22e6e09aae646843cd046022fd79, type: 3}
-  cooldown: 15
+  cooldown: 10
   damage: 8
   speed: 1
