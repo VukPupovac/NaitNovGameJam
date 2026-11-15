@@ -1,35 +1,40 @@
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set;}
+    public static GameManager Instance { get; private set; }
 
     public int playerMaxHealth = 100;
     public int earthHealth = 100;
     public int cowCount = 0;
     public int currentPlayerHealth;
 
-    private Image shipHud;
-    private Image earthBack;
+    [SerializeField] private SpriteRenderer shipHud;
+    [SerializeField] private SpriteRenderer glassHud;
+    [SerializeField] private SpriteRenderer earthBack;
 
 
-    [SerializeField] private Image healthyHud;
-    [SerializeField] private Image medHud;
-    [SerializeField] private Image lowHud;
+    [SerializeField] private Sprite healthyHud;
+    [SerializeField] private Sprite medHud;
+    [SerializeField] private Sprite lowHud;
 
-    [SerializeField] private Image healthyEarth;
-    [SerializeField] private Image medEarth;
-    [SerializeField] private Image lowEarth;
+    // [SerializeField] private Sprite healthyHud;
+    [SerializeField] private Sprite medGlassHud;
+    [SerializeField] private Sprite lowGlassHud;
+
+    [SerializeField] private Sprite healthyEarth;
+    [SerializeField] private Sprite medEarth;
+    [SerializeField] private Sprite lowEarth;
 
 
     public List<Threat> incomingThreats = new List<Threat>();
-    
+
     private void Awake()
     {
-        if ( Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -45,7 +50,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if(currentPlayerHealth <= 0)
+        if (currentPlayerHealth <= 0)
         {
             Lose();
         }
@@ -55,31 +60,34 @@ public class GameManager : MonoBehaviour
             Win();
         }
 
-        if(currentPlayerHealth >= 60)
+        if (currentPlayerHealth >= 60)
         {
-            shipHud = healthyHud;
+            shipHud.sprite = healthyHud;
+            glassHud.sprite = null;
         }
         else if (currentPlayerHealth >= 30)
         {
-            shipHud = medHud;
+            shipHud.sprite = medHud;
+            glassHud.sprite = medGlassHud;
         }
         else
         {
-            shipHud = lowHud;
+            shipHud.sprite = lowHud;
+            glassHud.sprite = lowGlassHud;
         }
 
 
         if (earthHealth >= 60)
         {
-            earthBack = healthyEarth;
+            earthBack.sprite = healthyEarth;
         }
         else if (earthHealth >= 30)
         {
-            earthBack = medEarth;
+            earthBack.sprite = medEarth;
         }
         else
         {
-            earthBack = lowEarth;
+            earthBack.sprite = lowEarth;
         }
 
         Debug.Log(incomingThreats.Count);
