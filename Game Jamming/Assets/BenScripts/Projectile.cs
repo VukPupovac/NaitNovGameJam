@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] private float scaleSpeed = 0.01f; //scale down speed per frame
     [SerializeField] private float minScaleFactor = 0.1f;
+    [SerializeField] private int damageAmount = 10;
 
     private Vector3 minScale;
     void Awake()
@@ -41,7 +42,7 @@ public class Projectile : MonoBehaviour
                 hitEvent.Raise();
                 if (target == targetPlanet) // meaning our target is the earth
                 {
-                    //target.GetComponent<EarthController>().DamageEarth(); or some method of damaging the earth
+                    gameManager.earthHealth -= damageAmount;
                 }
                 else if(target != targetPlanet)
                 { // destroy associated target that this projectile can affect
