@@ -5,7 +5,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
     [Header("Universal")]
     private float currentActTimer;
     [SerializeField] private float cooldownTimer = 2f;// so the player can't spam click options
-    private GameManager gameManager = GameManager.Instance; // reference to game manager if need be for liek repairing the ship
+    private GameManager gameManager;
     [SerializeField] private float dodgeTimer = 1f;
     private float currentDodgeTimer;
     public bool isDodging { get => currentDodgeTimer > 0f;} // for outside refernces
@@ -24,6 +24,7 @@ public class PlayerWeaponsSystem : MonoBehaviour
     private void Awake()
     {
         currentActTimer = 0f;
+        gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
     }
 
     private void Update()
