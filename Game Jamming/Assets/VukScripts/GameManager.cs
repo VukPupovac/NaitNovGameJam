@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int earthHealth = 100;
     public int cowCount = 0;
     public int currentPlayerHealth;
+
+    [SerializeField] private UIDocument uIDocument;
 
     public List<Threat> incomingThreats = new List<Threat>();
     
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        
 
         currentPlayerHealth = playerMaxHealth;
     }
@@ -39,6 +44,11 @@ public class GameManager : MonoBehaviour
         if (earthHealth <= 0)
         {
             Win();
+        }
+
+        if(currentPlayerHealth < 60)
+        {
+            
         }
     }
 
