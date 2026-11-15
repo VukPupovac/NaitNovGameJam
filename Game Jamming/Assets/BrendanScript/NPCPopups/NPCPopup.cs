@@ -8,6 +8,13 @@ public class NPCPopup : MonoBehaviour
     [SerializeField] private GameObject popupPrefab;
     [SerializeField] private Transform popupParent;
 
+    [Header("Portraits")]
+    [SerializeField] private GameObject png1Prefab;
+    [SerializeField] private GameObject png2Prefab;
+
+    [SerializeField] private Transform leftSpawnPoint;
+    [SerializeField] private Transform rightSpawnPoint;
+
     [Header("Dialogue")]
     [SerializeField] private PopupDialogueSO dialogueList;
 
@@ -58,6 +65,28 @@ public class NPCPopup : MonoBehaviour
             Quaternion.identity,
             popupParent);
 
+        GameObject portrait = null;
+
+        // Randomly choose portrait
+        bool usePng1 = Random.value < 0.5f;
+
+        if (usePng1)
+        {
+            portrait = Instantiate(
+                png1Prefab,
+                rightSpawnPoint.position,
+                Quaternion.identity,
+                rightSpawnPoint);
+        }
+        else
+        {
+            portrait = Instantiate(
+                png2Prefab,
+                leftSpawnPoint.position,
+                Quaternion.identity,
+                leftSpawnPoint);
+        }
+
         TextMeshProUGUI popupText = popup.GetComponentInChildren<TextMeshProUGUI>();
 
         DestroyPopup destroyPopup = popup.GetComponent<DestroyPopup>();
@@ -90,6 +119,11 @@ public class NPCPopup : MonoBehaviour
         if (popup != null)
         {
             Destroy(popup);
+        }
+
+        if (portrait != null)
+        {
+            Destroy(portrait);
         }
     }
 
