@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bomb Cluster
   m_EditorClassIdentifier: Assembly-CSharp::ThreatSO
   threatType: 1
-  prefab: {fileID: 8280369055455932844, guid: 1a6da4cd28a20514c8168fc7853cfafa, type: 3}
+  prefab: {fileID: 348710836818995824, guid: 1a6da4cd28a20514c8168fc7853cfafa, type: 3}
   cooldown: 5
   damage: 5
-  speed: 3
+  speed: 2
