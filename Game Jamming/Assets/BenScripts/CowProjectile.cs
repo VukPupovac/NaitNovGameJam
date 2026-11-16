@@ -15,7 +15,6 @@ public class CowProjectile : MonoBehaviour
     [SerializeField] private float scaleSpeed = 0.01f; //pretty much 1% scale down per fixed physics frame
     [SerializeField] private float maxScaleFactor = 0.1f;
     [SerializeField] private float projectileSpeed = 3f;
-    [SerializeField] private float lifetime = 1.5f;
 
     private Vector3 maxScale; // cow increases in size as is going to player
     void Awake()
@@ -44,13 +43,12 @@ public class CowProjectile : MonoBehaviour
             // scale the scale of the object down per frame whilst it's existent
             transform.localScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
 
-            if (lifetime <= 0f)
+            if (transform.localScale.x >= maxScale.x || transform.localScale.y >= maxScale.y)
             {
                 scoreEvent.Raise();
                 gameManager.cowCount += 1;
                 Destroy(gameObject);
             }
-            lifetime -= Time.deltaTime;
         }
     }
 

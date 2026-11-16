@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float minScaleFactor = 0.1f;
     [SerializeField] private int damageAmount = 10;
     [SerializeField] private float projectileSpeed = 3f;
-    [SerializeField] private float lifetime = 3f;
 
     private Vector3 minScale;
     void Awake()
@@ -52,7 +51,7 @@ public class Projectile : MonoBehaviour
         // scale the scale of the object down per frame whilst it's existent
         transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
 
-        if (lifetime <= 0f)
+        if (transform.localScale.x <= minScale.x || transform.localScale.y <= minScale.y)
         {
             hitEvent.Raise();
             if (target == targetPlanet) // meaning our target is the earth
@@ -68,7 +67,6 @@ public class Projectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        lifetime -= Time.deltaTime;
         
     }
 
