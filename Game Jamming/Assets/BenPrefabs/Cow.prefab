@@ -201,6 +201,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  scaleSpeed: 0.05
+  scaleSpeed: 0.3
   maxScaleFactor: 0.1
   projectileSpeed: 3

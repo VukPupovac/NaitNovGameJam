@@ -111,7 +111,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2560
   explosion: {fileID: 7543693807501685024, guid: 2051ba5b540844645be4fe14a7bde5c9, type: 3}
-  scaleSpeed: 0.05
+  scaleSpeed: 0.3
   minScaleFactor: 0.1
   damageAmount: 10
   projectileSpeed: 4
