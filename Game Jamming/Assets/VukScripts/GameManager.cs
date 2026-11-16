@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite medEarth;
     [SerializeField] private Sprite lowEarth;
 
+    private bool gameplay = true;
+
 
     public List<Threat> incomingThreats = new List<Threat>();
 
@@ -53,14 +55,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (currentPlayerHealth <= 0)
+        if (currentPlayerHealth <= 0 && gameplay == true)
         {
             Lose();
+            gameplay = false;
         }
 
-        if (earthHealth <= 0)
+        if (earthHealth <= 0 && gameplay == true)
         {
             Win();
+            gameplay = false;
         }
 
         if (currentPlayerHealth >= 60 && shipHud != null)
@@ -92,8 +96,6 @@ public class GameManager : MonoBehaviour
         {
             earthBack.sprite = lowEarth;
         }
-
-        Debug.Log(incomingThreats.Count);
     }
 
     private void Lose()
