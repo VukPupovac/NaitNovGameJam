@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
         }
 
         // scale the scale of the object down per frame whilst it's existent
-        transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.fixedDeltaTime;
+        transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime;
 
         if (transform.localScale.x <= minScale.x || transform.localScale.y <= minScale.y)
         {
